@@ -1,0 +1,14 @@
+<h1>Welcome to <%= @camper.name %>'s Page</h1>
+
+<h3>Age:  <%= @camper.age %></h3>
+
+<h3>Activities Signed Up for:</h3>
+
+<ol>
+    <% @camper.activities.each do |activity| %>
+    <li><%= link_to activity.name, activity_path(activity) %></li>
+    <p>Difficulty Level: <%= activity.difficulty %></p>
+    <% end %>
+</ol>
+
+<%= button_to "Sign Up for a New Activity", new_sign_up_path, method: :get %>
