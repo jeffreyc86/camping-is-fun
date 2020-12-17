@@ -3,7 +3,7 @@
 
 <% if flash[:errors] %>
     <% flash[:errors].each do |error| %>
-        <%= error %><br>
+        <p style="color: red;"><%= error %></p>
     <% end %>
 <% end %>    
 <br>
@@ -12,7 +12,7 @@
     <%= f.collection_select :camper_id, @campers, :id, :name %><br>
     <%= f.label :activity_id %>
     <%= f.collection_select :activity_id, @activities, :id, :name %><br>
-    <%= f.label :time, "Hour Created" %>
+    <%= f.label :time, "Sign Up Time:" %>
     <%= f.select :time, 0..23 %><br>
 
     <%= f.submit %>

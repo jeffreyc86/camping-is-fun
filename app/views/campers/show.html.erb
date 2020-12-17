@@ -5,9 +5,9 @@
 <h3>Activities Signed Up for:</h3>
 
 <ol>
-    <% @camper.activities.each do |activity| %>
-    <li><%= link_to activity.name, activity_path(activity) %></li>
-    <p>Difficulty Level: <%= activity.difficulty %></p>
+    <% @camper.sign_ups.each do |signup| %>
+    <li><%= link_to signup.activity.name, activity_path(signup.activity) %></li>
+    <p>Activity Time: <%= signup.time %></p>
     <% end %>
 </ol>
 
